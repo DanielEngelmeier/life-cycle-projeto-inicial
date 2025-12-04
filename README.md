@@ -1,27 +1,60 @@
-# LifeCycle
+# Angular: Ciclo de Vida
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+Este projeto foi desenvolvido como parte do curso **Angular: ciclo de vida** da [Alura](https://www.alura.com.br) O objetivo é compreender e aplicar os principais _lifecycle hooks_ do Angular para controlar o comportamento dos componentes durante sua criação, atualização e destruição.
 
-## Development server
+## ✅ Objetivos do Curso
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Entender o que são _lifecycle hooks_ no Angular.
+- Implementar métodos como:
+  - `ngOnInit()`: inicialização do componente.
+  - `ngOnChanges()`: detecção de mudanças nas propriedades.
+  - `ngAfterViewInit()`: manipulação do DOM após a renderização.
+  - `ngOnDestroy()`: limpeza de recursos antes da destruição.
+- Aplicar boas práticas para evitar problemas de performance e memória.
 
-## Code scaffolding
+## 🛠️ Tecnologias Utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular 15**
+- **TypeScript**
+- **Node.js** (para gerenciamento de pacotes)
+- **Font Awesome** (para ícones)
 
-## Build
+## 📂 Estrutura do Projeto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```Shell
+src/
+ ├── app/
+ │    ├── components/
+ │    │    ├── exemplo-lifecycle/
+ │    │    │    ├── exemplo-lifecycle.component.ts
+ │    │    │    ├── exemplo-lifecycle.component.html
+ │    │    │    └── exemplo-lifecycle.component.css
+ │    └── app.module.ts
+ └── main.ts
+```
 
-## Running unit tests
+## ▶️ Como Executar
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Instale as dependências:
 
-## Running end-to-end tests
+```Shell
+npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Execute o projeto:
 
-## Further help
+```Shell
+ng serve
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+3. Acesse no navegador:
+
+```Shell
+http://localhost:4200
+```
+
+## 🔍 O que foi visto
+
+- Como cada hook é chamado e sua ordem de execução.
+- Casos práticos para usar `ngOnChanges` e `ngOnDestroy`.
+- Estratégias para manipular elementos do DOM com segurança.
