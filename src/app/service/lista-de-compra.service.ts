@@ -49,6 +49,18 @@ export class ListaDeCompraService {
     this.listaDeCompra.push(item);
   }
 
+  editarItemDaLista(itemAntigo: Item, nomeEditadoDoItem: string) {
+    const itemEditado: Item = {
+      id: itemAntigo.id,
+      nome: nomeEditadoDoItem,
+      data: this.getDataHoraAtual(),
+      comprado: itemAntigo.comprado,
+    };
+
+    const id = itemAntigo.id;
+    this.listaDeCompra.splice(Number(id) - 1, 1, itemEditado);
+  }
+
   getUltimoId() {
     return Math.max(...this.listaDeCompra.map((item) => Number(item.id)));
   }
