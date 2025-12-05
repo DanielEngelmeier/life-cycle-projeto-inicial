@@ -3,6 +3,7 @@ import {
   EventEmitter,
   Input,
   OnChanges,
+  OnDestroy,
   OnInit,
   Output,
   SimpleChanges,
@@ -15,9 +16,10 @@ import { Item } from 'src/app/interfaces/iItem';
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.css'],
 })
-export class ItemComponent implements OnInit, OnChanges {
+export class ItemComponent implements OnInit, OnChanges, OnDestroy {
   @Input() item!: Item;
   @Output() emitindoItemParaEditar = new EventEmitter();
+  @Output() emitindoIdParaDeletar = new EventEmitter();
 
   faPen = faPen;
   faTrash = faTrash;
@@ -32,11 +34,20 @@ export class ItemComponent implements OnInit, OnChanges {
     console.log('OnChanges()');
   }
 
+  ngOnDestroy() {
+    console.log('deletado');
+  }
+
   editarItem() {
     this.emitindoItemParaEditar.emit(this.item);
   }
 
   comprarItem() {
     this.item.comprado = !this.item.comprado;
+  }
+
+  deletarItem() {
+    console.log('deletando');
+    this.emitindoIdParaDeletar.emit(this.item.id);
   }
 }
