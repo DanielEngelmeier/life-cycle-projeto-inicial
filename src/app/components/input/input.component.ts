@@ -20,6 +20,7 @@ export class InputComponent implements OnInit, OnChanges {
   valorItem!: string;
 
   constructor(private listaDeCompraService: ListaDeCompraService) {}
+
   ngOnChanges(changes: SimpleChanges): void {
     if (!changes['itemQueVaiSerEditado'].firstChange) {
       this.editando = true;
